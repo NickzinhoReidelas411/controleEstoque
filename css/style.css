@@ -1,0 +1,14 @@
+#paod
+{
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    transform: translate(46%, 0%);
+    width: 500px;
+    height: 500px;
+}
+
+#logar
+{
+    transform: translate(340%, 0%);
+}
