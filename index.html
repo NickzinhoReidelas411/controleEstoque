@@ -3,32 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tela de login</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div id="paod">
-    <form>
-        <!-- Email input -->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Ajuda pro Guilherme</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Clique aqui Guilherme
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="pages/cadastro-usuario.html">Cadastro Usuario</a></li>
+              <li><a class="dropdown-item" href="pages/cadastro-produto.html">Cadastro Produto</a></li>
+              <li><a class="dropdown-item" href="pages/cadastro-fornecedor.html">Cadastro Fornecedor</a></li>
+              <li><a class="dropdown-item" href="pages/movimentacao.html">Movimentação</a></li>
+              <li><a class="dropdown-item" href="pages/consulta-estoque.html">Consulta Estoque</a></li>
+              <li><a class="dropdown-item" href="index.html">Tela de Login</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <div id="paod">
+    <form action="php.php" method="post">
+
+        <!-- Bloco de Login -->
         <div data-mdb-input-init class="form-outline mb-4">
           <input type="login" id="login" class="form-control"-/>
-          <label class="form-label" for="form2Example1">login</label>
+          <label class="form-label" for="form2Example1">Login</label>
         </div>
       
-        <!-- Password input -->
+        <!-- Bloco de senha -->
         <div data-mdb-input-init class="form-outline mb-4">
           <input type="password" id="form2Example2" class="form-control" />
           <label class="form-label" for="form2Example2">Password</label>
         </div>
 
-        <!-- Submit button -->
-        <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4" id="logar">Login</button>
+        <!-- bloco do Botão -->
+        <button  type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4" id="logar">Login</button>
       
-        <!-- Register buttons -->
+        <!-- Botão para registrar -->
+
         <div class="text-center">
-          <p>Não tem cadastro? <a href="#!">Registre-se!</a></p>
+          <p>Não tem cadastro? <a href="pages/cadastro-usuario.html">Registre-se!</a></p>
           </button>
         </div>
       </form>
