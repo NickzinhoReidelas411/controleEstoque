@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Fornecedor</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Ajuda pro Guilherme</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Clique aqui Guilherme
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="cadastro-usuario.html">Cadastro Usuario</a></li>
+                  <li><a class="dropdown-item" href="cadastro-produto.html">Cadastro Produto</a></li>
+                  <li><a class="dropdown-item" href="cadastro-fornecedor.html">Cadastro Fornecedor</a></li>
+                  <li><a class="dropdown-item" href="movimentacao.html">Movimentação</a></li>
+                  <li><a class="dropdown-item" href="consulta-estoque.html">Consulta Estoque</a></li>
+                  <li><a class="dropdown-item" href="../index.html">Tela de Login</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+  <div id="cdu">
+    <form action="php.php" method="post">
+
+        <!-- Nome do Usuário -->
+        <div data-mdb-input-init class="form-outline mb-4">
+          <input type="text" id="nmFornecedor" class="form-control"-/>
+          <label class="form-label" for="form2Example1">Nome do Fornecedor</label>
+        </div>
+
+        <!-- CPF/CNPJ -->
+        <div data-mdb-input-init class="form-outline mb-4">
+            <input type="number" id="nrCPFCNPJ" class="form-control"-/>
+            <label class="form-label" for="form2Example1">CPF ou CNPJ (Apenas números)</label>
+        </div>
+
+        <!-- Endereço -->
+        <div data-mdb-input-init class="form-outline mb-4">
+            <input type="text" id="nmEndereço" class="form-control"-/>
+            <label class="form-label" for="form2Example1">Endereço</label>
+        </div>
+
+        <!-- Telefone -->
+        <div data-mdb-input-init class="form-outline mb-4">
+            <input type="text" id="nrTelefone" class="form-control"-/>
+            <label class="form-label" for="form2Example1">Telefone</label>
+        </div>
+
+        <!-- E-mail -->
+        <div data-mdb-input-init class="form-outline mb-4">
+            <input type="text" id="nmEndereço" class="form-control"-/>
+            <label class="form-label" for="form2Example1">E-mail</label>
+        </div>
+        
+        <!-- Login Usuário-->
+        <div data-mdb-input-init class="form-outline mb-4">
+            <input type="login" id="loginUsuario" class="form-control"-/>
+            <label class="form-label" for="form2Example1">Login</label>
+          </div>
+
+        <!-- Bloco de senha -->
+        <div data-mdb-input-init class="form-outline mb-4">
+            <input type="password" id="form2Example2" class="form-control" />
+            <label class="form-label" for="form2Example2">Password</label>
+        </div>
+
+        <!-- Setor -->
+        <div data-mdb-input-init class="form-outline mb-4">
+            <input type="text" id="nmSetor" class="form-control"-/>
+            <label class="form-label" for="form2Example1">Setor</label>
+          </div>
+
+        <!-- bloco do Botão -->
+        <button  type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4" id="logar">Cadastrar</button>
+        
+      </form>
+    </div>
+</body>
+</html>
