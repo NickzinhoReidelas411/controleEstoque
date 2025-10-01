@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="home.html">Ajuda pro Guilherme</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Clique aqui Guilherme
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="pages/cadastro-usuario.html">Cadastro Usuario</a></li>
+              <li><a class="dropdown-item" href="pages/cadastro-produto.html">Cadastro Produto</a></li>
+              <li><a class="dropdown-item" href="pages/cadastro-fornecedor.html">Cadastro Fornecedor</a></li>
+              <li><a class="dropdown-item" href="pages/movimentacao.html">Movimentação</a></li>
+              <li><a class="dropdown-item" href="pages/consulta-estoque.html">Consulta Estoque</a></li>
+              <li><a class="dropdown-item" href="../index.html">Tela de Login</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <div id="paod">
+    <form action="php.php" method="post">
+
+        <label for="movimentacao">Tipo de Movimentação:</label>
+        <select name="movimentacao" id="movimentacao">
+          <option value="">--Selecione--</option>
+          <option value="entrada">Entrada</option>
+          <option value="saida">Saída</option>
+        </select><p></p>
+
+        <!--  -->
+        <label for="categoria">Categoria de Produto:</label>
+        <select name="categoria" id="categoria" onchange="mostrarCampoOutro()">
+            <option value="">--Selecione--</option>
+            <option value="alimentos-frescos">Alimentos Frescos</option>
+            <option value="acougue-peixaria">Açougue / Peixaria</option>
+            <option value="laticinios">Laticínios</option>
+            <option value="padaria-confeitaria">Padaria e Confeitaria</option>
+            <option value="mercearia-seca">Mercearia Seca</option>
+            <option value="doces-snacks">Doces e Snacks</option>
+            <option value="bebidas-nao-alcoolicas">Bebidas Não Alcoólicas</option>
+            <option value="bebidas-alcoolicas">Bebidas Alcoólicas</option>
+            <option value="bebes">Bebês</option>
+            <option value="higiene-pessoal">Higiene Pessoal</option>
+            <option value="limpeza-domestica">Limpeza Doméstica</option>
+            <option value="pet-shop">Pet Shop</option>
+            <option value="utilidades-domesticas">Utilidades Domésticas</option>
+            <option value="saude-bem-estar">Saúde e Bem-estar</option>
+            <option value="outros">Outros</option>
+        </select>
+
+        <div id="outros-container" style="display:none; margin-top:10px;">
+          <label for="outrosInput">Digite a categoria:</label>
+          <input type="text" name="outrosInput" id="outrosInput" placeholder="Escreva aqui...">
+        </div>
+        
+        <script>
+          function mostrarCampoOutro() {
+            var select = document.getElementById("categoria");
+            var outrosContainer = document.getElementById("outros-container");
+            
+            if (select.value === "outros") {
+              outrosContainer.style.display = "block";
+            } else {
+              outrosContainer.style.display = "none";
+            }
+          }
+        </script>
+
+        <p></p>
+
+        <!-- Bloco de Login -->
+        <div data-mdb-input-init class="form-outline mb-4">
+          <input type="number" id="quantidade" class="form-control"-/>
+          <label class="form-label" for="form2Example1">Quantidade</label>
+        </div>
+
+        <!-- Data de Movimento -->
+    <div data-mdb-input-init class="form-outline mb-4">
+        <input type="date" id="dtMovimento" class="form-control" />
+        <label class="form-label" for="dtMovimento">Data</label>
+    </div>
+    <script>
+        const hoje = new Date().toISOString().split('T')[0];
+        document.getElementById("dtMovimento").value = hoje;
+    </script>
+      
+
+        
+        <!-- Bloco de senha -->
+        <div data-mdb-input-init class="form-outline mb-4">
+          <input type="textarea" id="motivo" class="form-control" />
+          <label class="form-label" for="form2Example2">Motivo</label>
+        </div>
+
+        <!-- bloco do Botão -->
+        <button  type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4" id="registrar">Registrar Movimentação</button>
+        <button  type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4" id="voltar">Voltar</button>
+      
+      </form>
+    </div>
+</body>
+</html>

@@ -11,7 +11,7 @@
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Ajuda pro Guilherme</a>
+          <a class="navbar-brand" href="home.html">Ajuda pro Guilherme</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -22,6 +22,7 @@
                   Clique aqui Guilherme
                 </a>
                 <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="home.html">Home</a></li>
                   <li><a class="dropdown-item" href="cadastro-usuario.html">Cadastro Usuario</a></li>
                   <li><a class="dropdown-item" href="cadastro-produto.html">Cadastro Produto</a></li>
                   <li><a class="dropdown-item" href="cadastro-fornecedor.html">Cadastro Fornecedor</a></li>
@@ -45,13 +46,68 @@
         </div>
       
         <!--  -->
-        <div data-mdb-input-init class="form-outline mb-4">
-          <input type="text" id="categoria" class="form-control" />
-          <label class="form-label" for="form2Example2">Categoria</label>
+        <label for="categoria">Categoria de Produto:</label>
+        <select name="categoria" id="categoria" onchange="mostrarCampoOutro()">
+            <option value="">--Selecione--</option>
+            <option value="alimentos-frescos">Alimentos Frescos</option>
+            <option value="acougue-peixaria">Açougue / Peixaria</option>
+            <option value="laticinios">Laticínios</option>
+            <option value="padaria-confeitaria">Padaria e Confeitaria</option>
+            <option value="mercearia-seca">Mercearia Seca</option>
+            <option value="doces-snacks">Doces e Snacks</option>
+            <option value="bebidas-nao-alcoolicas">Bebidas Não Alcoólicas</option>
+            <option value="bebidas-alcoolicas">Bebidas Alcoólicas</option>
+            <option value="bebes">Bebês</option>
+            <option value="higiene-pessoal">Higiene Pessoal</option>
+            <option value="limpeza-domestica">Limpeza Doméstica</option>
+            <option value="pet-shop">Pet Shop</option>
+            <option value="utilidades-domesticas">Utilidades Domésticas</option>
+            <option value="saude-bem-estar">Saúde e Bem-estar</option>
+            <option value="outros">Outros</option>
+        </select>
+
+        <div id="outros-container" style="display:none; margin-top:10px;">
+          <label for="outrosInput">Digite a categoria:</label>
+          <input type="text" name="outrosInput" id="outrosInput" placeholder="Escreva aqui...">
         </div>
+        
+        <script>
+          function mostrarCampoOutro() {
+            var select = document.getElementById("categoria");
+            var outrosContainer = document.getElementById("outros-container");
+            
+            if (select.value === "outros") {
+              outrosContainer.style.display = "block";
+            } else {
+              outrosContainer.style.display = "none";
+            }
+          }
+        </script>
+
+        <p></p>
+
+<!-- campo escondido -->
+<div id="outros-container" style="display:none; margin-top:10px;">
+  <label for="outrosInput">Digite a categoria:</label>
+  <input type="text" name="outrosInput" id="outrosInput" placeholder="Escreva aqui..." >
+</div>
+
+<script>
+  function mostrarCampoOutro() {
+    var select = document.getElementById("categoria");
+    var outrosContainer = document.getElementById("outros-container");
+    
+    if (select.value === "outros") {
+      outrosContainer.style.display = "block";
+    } else {
+      outrosContainer.style.display = "none";
+    }
+  }
+</script>
+
 
         <div data-mdb-input-init class="form-outline mb-4">
-            <input type="text" id="descrição" class="form-control"/>
+            <input type="textarea" id="descrição" class="form-control"/>
             <label class="form-label" for="form2Example2">Descrição</label>
           </div>
 
